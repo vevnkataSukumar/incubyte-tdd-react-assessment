@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './StringCalculator.css';
 import { SumUp } from './util';
 
 function StringCalculator() {
@@ -16,18 +16,22 @@ function StringCalculator() {
     setInputText(''); // Clear input field after adding
   };
 
-  const sum = typeof numberArr === 'string' ? numberArr :  numberArr?.reduce((total, num) => total + num, 0);
+  const sum = typeof numberArr === 'string' ? numberArr : numberArr?.reduce((total, num) => total + num, 0);
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Enter Text"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      />
-      <button onClick={handleAdd}>Add</button>
-      <div data-testid="sum">Sum: {sum}</div>
+    <div className={'container'}>
+      <h2 className={'header'}>String Calculator</h2>
+      <div className={'card'}>
+        <input
+          type="text"
+          placeholder="Enter Text"
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          className={'input'}
+        />
+        <button onClick={handleAdd} className={'button'}>Sum Up</button>
+        <div data-testid="sum" className={'sumText'}>Sum: {sum}</div>
+      </div>
     </div>
   );
 }
