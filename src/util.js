@@ -16,6 +16,11 @@ export function SumUp(stringWithNumbers) {
     // Filter out numbers greater than 1000
     const numbersArray = getFilteredNumbersArray(numArr);
 
+    // Check if the array has any negative numbers
+    if (doesNumbersArrayHaveNegativeNumber(numbersArray)) {
+        return 'negatives not allowed';
+    }
+
     return numbersArray;
     
 }
@@ -33,4 +38,15 @@ function clearString(stringWithNumbers) {
 function getFilteredNumbersArray(numArr) {
     //stringArray.map(Number)
     return  numArr.map(Number)?.filter((num) => num && num < 1000);
+  }
+
+// function for checking if the array has any negative numbers
+function doesNumbersArrayHaveNegativeNumber(numbersArray) {
+    // Check if any number in the array is negative
+    return numbersArray.some(num => num < 0);
+  }
+
+// function for summing the numbers in the array
+function sumNumbers(numArray) {
+    return numArray?.reduce((acc, num) => acc + parseInt(num), 0);
   }

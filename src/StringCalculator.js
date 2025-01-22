@@ -12,12 +12,11 @@ function StringCalculator() {
       return;
     }
     const numArray = SumUp(inputText);
-    console.log('=======> ', numArray);
     setNumberArr(numArray);
     setInputText(''); // Clear input field after adding
   };
 
-  const sum = numberArr?.reduce((total, num) => total + num, 0);
+  const sum = typeof numberArr === 'string' ? numberArr :  numberArr?.reduce((total, num) => total + num, 0);
 
   return (
     <div>

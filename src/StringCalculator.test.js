@@ -5,13 +5,6 @@ describe('StringCalculator', () => {
   test('should return 0 when an empty string is passed', () => {
     render(<StringCalculator />);
 
-    // // Initially, the sum should be 0
-    // const sumElement = screen.getByTestId('sumValue');
-    // expect(sumElement).toHaveTextContent('0');
-
-    // // Get the input field and buttons
-    // const inputField = screen.getByPlaceholderText('Enter Text');
-    // const addButton = screen.getByText('Add');
 
     // Initially, the sum should be 0
     const sumElement = screen.getByTestId('sum');
@@ -62,5 +55,10 @@ describe('StringCalculator', () => {
     fireEvent.change(inputField, { target: { value: '[*][%]\n1*2%3' } });
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 6');
+
+    // test case for string with negative numbers in it and removing special charecters other than numbers, comma and - from it and returning the sum of the numbers
+    fireEvent.change(inputField, { target: { value: '$$$1,23%%%,[[__))-3]' } });
+    fireEvent.click(addButton);
+    expect(sumElement).toHaveTextContent('Sum: negatives not allowed');
   });
 });
