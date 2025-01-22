@@ -47,5 +47,10 @@ describe('StringCalculator', () => {
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 3');
 
+    // Simulate entering "2,5,6,7,8,10001" and clicking Add and ignorig the values which are grater than 1000
+    fireEvent.change(inputField, { target: { value: '2,5,6,7,8,10001' } });
+    fireEvent.click(addButton);
+    expect(sumElement).toHaveTextContent('Sum: 28');
+
   });
 });

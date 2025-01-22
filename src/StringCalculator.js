@@ -17,7 +17,7 @@ function StringCalculator() {
     setInputText(''); // Clear input field after adding
   };
 
-  const sum = numberArr?.reduce((total, num) => total + Number(num), 0);
+  const sum = numberArr?.reduce((total, num) => total + num, 0);
 
   return (
     <div>
