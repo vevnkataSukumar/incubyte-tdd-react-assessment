@@ -42,5 +42,10 @@ describe('StringCalculator', () => {
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 38');
 
+    // Simulate entering ";\n1;2" and clicking Add
+    fireEvent.change(inputField, { target: { value: ';\n1;2' } });
+    fireEvent.click(addButton);
+    expect(sumElement).toHaveTextContent('Sum: 3');
+
   });
 });
