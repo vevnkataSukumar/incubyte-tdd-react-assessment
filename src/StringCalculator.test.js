@@ -21,12 +21,12 @@ describe('StringCalculator', () => {
     const inputField = screen.getByPlaceholderText('Enter Text');
     const addButton = screen.getByText('Add');
 
-    // Simulate entering "1,2" and clicking Add
+    // Simulate entering empty string and clicking Add
     fireEvent.change(inputField, { target: { value: '' } });
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 0');
 
-    // Simulate entering "1,2" and clicking Add
+    // Simulate entering "1" and clicking Add
     fireEvent.change(inputField, { target: { value: '1' } });
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 1'); // 1
@@ -36,5 +36,11 @@ describe('StringCalculator', () => {
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 3'); // 1 + 2 = 3
     
+
+    // Simulate entering "2,5,6,7,8,10" and clicking Add
+    fireEvent.change(inputField, { target: { value: '2,5,6,7,8,10' } });
+    fireEvent.click(addButton);
+    expect(sumElement).toHaveTextContent('Sum: 38');
+
   });
 });
