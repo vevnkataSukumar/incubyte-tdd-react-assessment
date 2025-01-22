@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  test('should add numbers and display the sum', () => {
+    render(<App />);
+
+    // Initially, the sum should be 0
+    const sumElement = screen.getByTestId('sum');
+    expect(sumElement).toHaveTextContent('0');
+
+  });
 });
