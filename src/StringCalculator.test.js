@@ -52,5 +52,15 @@ describe('StringCalculator', () => {
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 28');
 
+    //test case for string with numbers in it and removing special charecters other than numbers, comma and - from it and returning the sum of the numbers
+    fireEvent.change(inputField, { target: { value: 'abc123!@#,45de*67?890' } });
+    fireEvent.click(addButton);
+    expect(sumElement).toHaveTextContent('Sum: 1125');
+
+
+    //test case for string with numbers in it and removing special charecters other than numbers, comma and - from it and returning the sum of the numbers
+    fireEvent.change(inputField, { target: { value: '[*][%]\n1*2%3' } });
+    fireEvent.click(addButton);
+    expect(sumElement).toHaveTextContent('Sum: 6');
   });
 });
