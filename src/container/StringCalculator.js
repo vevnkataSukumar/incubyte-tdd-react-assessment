@@ -1,6 +1,6 @@
 import React from 'react';
-import './StringCalculator.css';
-import { SumUp } from './util';
+import '../styles/StringCalculator.css'
+import { SumUp } from '../utils';
 
 function StringCalculator() {
   const [numberArr, setNumberArr] = React.useState([]);

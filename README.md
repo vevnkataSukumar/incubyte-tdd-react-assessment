@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# String Calculator App
+A simple React-based web application that allows users to input a comma-separated list of numbers, and when they click the "Add" button, it displays the sum of those numbers. The app includes basic input validation to ensure that only valid numbers are summed.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
+    1. Input field for comma-separated numbers.
+    2. Displays the sum of the entered numbers.
+    3. Handles empty inputs and invalid characters (non-numeric values are ignored).
+    4. Responsive design that works on both desktop and mobile devices.
+    5. Interactive input with focus effects and button animations.
 
-## Available Scripts
+# Table of Contents
+    1. Technologies Used
+    2. Installation
+    3. Usage
+    4. Folder Structure
+    5. Styling
+    6. Testing
 
-In the project directory, you can run:
+# Technologies Used
+    1. React.js: JavaScript library for building user interfaces.
+    2. CSS Modules: For scoped and reusable CSS.
+    3. HTML5: For the basic structure of the app.
+
+# Installation
+1. Clone the repository:
+    git clone <repository-url>
+    Navigate to the project directory:
+
+2. cd number-adder-app
+    Install dependencies:
+
+### `npm install`
+    Run the development server:
 
 ### `npm start`
+    Your application will be available at http://localhost:3000.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+
+# Usage
+    1. Open the app in your browser.
+    2. Type comma-separated numbers into the input field (e.g., 1, 2, 3).
+    3. Click the "Add" button to see the sum of the numbers displayed below the button.
+    4. If the input is empty, the sum will display as 0.
+    5. Special characters and non-numeric values are ignored in the sum calculation.
+
+# Folder Structure
+number-adder-app/
+│
+├── src/
+│   ├── container/
+│   │   └── StringCalculator.js        # The main React component containing logic for adding numbers.
+│   ├── tests/
+│   │   └── StringCalculator.test.js   # The main React component containing component tests in it.
+│   ├── styles/
+│   │   └── StringCalculator.css   # CSS Module for styling the SumComponent.
+│   ├── utils/
+│   │   └── index.js               # logic section.
+│   ├── index.js                   # Entry point for the React app.
+│   └── reportWebVitals.js         # Performance monitoring utility.
+├── public/
+│   └── index.html                 # The HTML template.
+├── package.json                   # Project dependencies and metadata.
+└── README.md                      # This file.
+
+
+# Styling
+    The project uses CSS Modules for scoped styles. The styles are located in the src/styles/SumComponent.module.css file.
+
+    Key styling features include:
+
+    A modern gradient background for the page.
+    Responsive design for mobile, tablet, and desktop views.
+    Smooth hover and focus effects for the input field and buttons.
+    The sum value is displayed with a hover zoom effect to make it more interactive.
+
+
+# Testing
+    To ensure the application works as expected, it's recommended to write tests for the component. You can use tools like Jest and React Testing Library for unit and integration tests.
+
+    Running Tests:
+    If you want to run tests (if added in the future), run:
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    shows the test results in the terminal
