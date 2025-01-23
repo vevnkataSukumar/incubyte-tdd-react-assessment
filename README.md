@@ -35,7 +35,8 @@ A simple React-based web application that allows users to input a comma-separate
 ### `npm start`
     Your application will be available at http://localhost:3000.
 
-
+### Sample App Screen shot here
+<img width="950" alt="Screenshot 2025-01-23 at 7 57 07 AM" src="https://github.com/user-attachments/assets/e5de1159-493b-47ce-837c-ee95dc066152" />
 
 # Usage
     1. Open the app in your browser.
