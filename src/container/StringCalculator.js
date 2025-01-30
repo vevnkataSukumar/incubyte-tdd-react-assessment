@@ -29,7 +29,7 @@ function StringCalculator() {
           onChange={(e) => setInputText(e.target.value)}
           className={'input'}
         />
-        <button onClick={handleAdd} className={'button'}>Sum Up</button>
+        <button onClick={handleAdd} className={'button'}>Add</button>
         <div data-testid="sum" className={'sumText'}>Sum: {sum}</div>
       </div>
     </div>

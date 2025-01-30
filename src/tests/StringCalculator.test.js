@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import StringCalculator from './StringCalculator';
+import StringCalculator from '../container/StringCalculator';
 
 describe('StringCalculator', () => {
   test('should return 0 when an empty string is passed', () => {
