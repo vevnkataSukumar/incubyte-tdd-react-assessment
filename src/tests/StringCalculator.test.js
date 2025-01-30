@@ -5,7 +5,6 @@ describe('StringCalculator', () => {
   test('should return 0 when an empty string is passed', () => {
     render(<StringCalculator />);
 
-
     // Initially, the sum should be 0
     const sumElement = screen.getByTestId('sum');
     expect(sumElement).toHaveTextContent('Sum: 0');
@@ -36,9 +35,14 @@ describe('StringCalculator', () => {
     expect(sumElement).toHaveTextContent('Sum: 38');
 
     // Simulate entering ";\n1;2" and clicking Add
-    fireEvent.change(inputField, { target: { value: ';\n1;2' } });
+    fireEvent.change(inputField, { target: { value: '//;\n1;2' } });
     fireEvent.click(addButton);
     expect(sumElement).toHaveTextContent('Sum: 3');
+
+    // Simulate entering "//*\n2*3" and clicking Add
+    fireEvent.change(inputField, { target: { value: '//*\\n2*3' } });
+    fireEvent.click(addButton);
+    expect(sumElement).toHaveTextContent('Sum: 6');
 
     // Simulate entering "2,5,6,7,8,10001" and clicking Add and ignorig the values which are grater than 1000
     fireEvent.change(inputField, { target: { value: '2,5,6,7,8,10001' } });

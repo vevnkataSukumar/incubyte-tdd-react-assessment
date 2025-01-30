@@ -3,15 +3,14 @@ export function SumUp(stringWithNumbers) {
     if (stringWithNumbers === '') {
         return 0;
     }
+    const splitVal = stringWithNumbers.split('\\n');
+    const delimeter = splitVal[0].replace('//', '');
 
     // Remove all characters that are not numbers, commas and -
     const cleanString = clearString(stringWithNumbers);
-    console.log('=======> ', cleanString);
 
     // Split the string into an array of numbers
-    const numArr = cleanString?.split(',');
-
-    console.log('=======> ', numArr);
+    const numArr = cleanString?.split(','); // '2,3' ==> [2,3]
 
     // Filter out numbers greater than 1000
     const numbersArray = getFilteredNumbersArray(numArr);
@@ -21,17 +20,25 @@ export function SumUp(stringWithNumbers) {
         return 'negatives not allowed';
     }
 
-    return numbersArray;
-    
+    let result;
+
+    if (delimeter === '*') {
+        result= numbersArray?.reduce((total, num) => total * num, 1);
+    } else {
+        result = numbersArray?.reduce((total, num) => total + num, 0);
+    }
+
+    return result;
 }
 
 // function for removing all characters that are not numbers, commas and -
 function clearString(stringWithNumbers) {
     // Match groups of consecutive digits
-    const numberGroups = stringWithNumbers.match(/-?\d+/g);
+    // imput as //;\n2;3 
+    const numberGroups = stringWithNumbers.match(/-?\d+/g); // '2,3'
     
     // Join the number groups with commas
-    return numberGroups ? numberGroups.join(',') : '';
+    return numberGroups?  numberGroups.join(',') : '';
 }
 
 // fuction for converting string to array of numbers aqnd filtering out the numbers which are greater than 1000

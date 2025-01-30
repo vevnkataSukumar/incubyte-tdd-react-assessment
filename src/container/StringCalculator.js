@@ -3,20 +3,22 @@ import '../styles/StringCalculator.css'
 import { SumUp } from '../utils';
 
 function StringCalculator() {
-  const [numberArr, setNumberArr] = React.useState([]);
+  // const [numberArr, setNumberArr] = React.useState([]);
   const [inputText, setInputText] = React.useState(''); // Input field value
+  const [sumVal, setSumVal] = React.useState(0);
 
   const handleAdd = () => {
     if (!inputText.trim()) {
       setInputText(''); // Optional: Clear the input field, even if it's empty
       return;
     }
-    const numArray = SumUp(inputText);
-    setNumberArr(numArray);
+    const sumResult = SumUp(inputText);
+    setSumVal(sumResult);
+    // setNumberArr(numArray);
     setInputText(''); // Clear input field after adding
   };
 
-  const sum = typeof numberArr === 'string' ? numberArr : numberArr?.reduce((total, num) => total + num, 0);
+  // const sum = typeof numberArr === 'string' ? numberArr : numberArr?.reduce((total, num) => total + num, 0);
 
   return (
     <div className={'container'}>
@@ -30,7 +32,7 @@ function StringCalculator() {
           className={'input'}
         />
         <button onClick={handleAdd} className={'button'}>Add</button>
-        <div data-testid="sum" className={'sumText'}>Sum: {sum}</div>
+        <div data-testid="sum" className={'sumText'}>Sum: {sumVal}</div>
       </div>
     </div>
   );
